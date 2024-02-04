@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import supabase from "../../Config/Config";
+import { Link, useNavigate } from "react-router-dom";
 const Signup = () => {
+  const navigate = useNavigate()
   //   const [formData, setFromData] = useState({
   //       fullName: '',
   //       email: '',
@@ -38,6 +40,7 @@ const Signup = () => {
     }
     if (data) {
       console.log(data);
+      navigate('/login')
     }
   };
   return (
@@ -87,6 +90,13 @@ const Signup = () => {
           <button className="px-4 py-2 bg-[#07B5D5] rounded">Signup</button>
         </div>
       </form>
+
+      <p>Already signup? 
+      <Link to={"/login"}>
+        <span>Login</span>
+        
+      </Link>
+        </p>
     </div>
   );
 };

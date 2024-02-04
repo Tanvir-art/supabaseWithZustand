@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import supabase from "../../Config/Config";
 import useTodoStore from "../../Store/Store";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate()
@@ -63,6 +63,13 @@ const Login = () => {
           <button className="px-4 py-2 bg-[#07B5D5] rounded">Login</button>
         </div>
       </form>
+
+      <p>Did not signup? 
+      <Link to={"/signup"}>
+        <span>Signup</span>
+        
+      </Link>
+        </p>
     </div>
   );
 };
